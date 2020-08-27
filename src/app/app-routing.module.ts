@@ -4,13 +4,17 @@ import {HomepageGuard} from './guard/homepage.guard';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginModule )
+  },
+  {
     path: 'homepage',
     loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule),
     canActivate: [HomepageGuard],
     canLoad: [HomepageGuard]
   },
-  {path: '', redirectTo: '/homepage', pathMatch: 'full'},
-  {path: '**', redirectTo: '/homepage'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '**', redirectTo: '/login'},
 ];
 
 @NgModule({

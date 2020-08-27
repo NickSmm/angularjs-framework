@@ -2,7 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
+
 import { AppComponent } from './app.component';
+
+const ngZorroConfig: NzConfig = {};
 
 @NgModule({
   declarations: [
@@ -10,11 +15,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: NZ_CONFIG, useValue: ngZorroConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
