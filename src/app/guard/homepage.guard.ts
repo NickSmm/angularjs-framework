@@ -9,13 +9,13 @@ export class HomepageGuard implements CanActivate, CanLoad {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log(state);
+    // console.log(state);
     return true;
   }
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    console.log(segments);
+    // console.log(segments);
     return true;
   }
 }

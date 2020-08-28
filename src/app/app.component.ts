@@ -8,33 +8,11 @@ import {debounceTime, throttleTime} from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  title = 'myAngular';
-  fun: any;
-  inputValue: string = 'test';
-  inputValue1: string = 'test';
-  @ViewChildren('test')
-  // testInputs: QueryList<ElementRef>;
-  // constructor(private elementRef: ElementRef) {
-  // }
-  @ViewChild('test', {static: true})
-  testInput: ElementRef;
-
-  ngOnInit(): void {
-    console.log(1111);
+  constructor() {
   }
+  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    // this.testDebounce();
-  }
+  ngAfterViewInit(): void {}
 
-  ngOnDestroy(): void {
-    this.fun.unsubscribe();
-  }
-
-  testDebounce = () => {
-    this.fun = fromEvent(this.testInput.nativeElement, 'keyup').pipe(debounceTime(1000)).subscribe(x => {
-      console.log(this.inputValue);
-    });
-    //console.log(this.testInputs);
-  };
+  ngOnDestroy(): void {}
 }
