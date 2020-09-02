@@ -13,6 +13,10 @@ const routes: Routes = [
     canActivate: [HomepageGuard],
     canLoad: [HomepageGuard]
   },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule)
+  },
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', redirectTo: '/login'},
 ];

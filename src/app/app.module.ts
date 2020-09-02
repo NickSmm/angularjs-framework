@@ -12,6 +12,8 @@ import {NgZorroAntdModule, NzConfig, NZ_CONFIG} from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 import {ShareModule} from './share/share.module';
 import {HttpClientModule} from '@angular/common/http';
+import {MoneyPipe} from './pipes/money.pipe';
+import {CommonService} from './service/common.service';
 
 const ngZorroConfig: NzConfig = {};
 const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
@@ -27,11 +29,12 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ShareModule
+    // ShareModule
   ],
   providers: [
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
-    // { provide: NZ_ICONS, useValue: icons }
+    // { provide: NZ_ICONS, useValue: icons }，
+    CommonService
   ],
   bootstrap: [AppComponent]
 })

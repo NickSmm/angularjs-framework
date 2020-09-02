@@ -12,9 +12,7 @@ import {MoneyPipe} from '../pipes/money.pipe';
     NzButtonModule,
     NzIconModule
   ],
-  providers: [
-    CommonService
-  ],
+  providers: [],
   exports: [
     NzButtonModule,
     NzIconModule,

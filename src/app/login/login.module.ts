@@ -10,7 +10,7 @@ import {ShareModule} from '../share/share.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    // ShareModule,
+    ShareModule
   ]
 })
 export class LoginModule { }
