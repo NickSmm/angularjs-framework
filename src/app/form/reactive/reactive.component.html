@@ -1,0 +1,31 @@
+<p>reactive form works!</p>
+<form [formGroup]="contactInfoForm">
+  <label>
+    <span>ContactName:</span>
+    <input type="text" formControlName="contactName">
+  </label>
+  <label>
+    <span>ContactId:</span>
+    <input type="text" formControlName="contactPhone">
+  </label>
+</form>
+<form action="" [formGroup]="traderInfoForm">
+  <label>
+    <span>Name:</span>
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    <span>Id:</span>
+    <input type="text" formControlName="id">
+  </label>
+  <div formArrayName="workLocationList">
+    <p>测试FormArray</p>
+    <button (click)="addWorkLocation()">add one control</button>
+    <div *ngFor="let item of workLocationList.controls; let i = index">
+      <label>
+        <span>Index: {{i}}</span>
+        <input type="text" [formControlName]="i">
+      </label>
+    </div>
+  </div>
+</form>
