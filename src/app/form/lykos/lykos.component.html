@@ -1,0 +1,36 @@
+<p>lykos form</p>
+<form action="" [formGroup]="transformForm">
+  <label>
+    <span>ContactName:</span>
+    <input type="text" formControlName="contactName">
+  </label>
+  <label>
+    <span>ContactPhone:</span>
+    <input type="text" formControlName="contactPhone">
+  </label>
+  <div>
+    <ng-container formArrayName="driverList" *ngFor="let item of driverList.controls; let i = index">
+      <div [formGroupName]="i">
+        <label>
+          <span>driverName:</span>
+          <input type="text" formControlName="driverName">
+        </label>
+        <label>
+          <span>driverId:</span>
+          <input type="text" formControlName="driverId">
+        </label>
+        <label>
+          <span>driverPhone:</span>
+          <input type="text" formControlName="driverPhone">
+        </label>
+        <label>
+          <span>licensePlate:</span>
+          <input type="text" formControlName="licensePlate">
+        </label>
+      </div>
+    </ng-container>
+  </div>
+</form>
+<button (click)="addDriverInfo()">add driver info</button>
+<button (click)="showValue()">输出值</button>
+<button (click)="setValue()">设置值</button>
